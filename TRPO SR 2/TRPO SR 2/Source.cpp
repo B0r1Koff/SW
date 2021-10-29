@@ -29,5 +29,24 @@ int main()
 		delete[]massive;
 		break; }
 
-	
+	case 2:
+	{
+
+		double* massive;
+		int i, massive_size;
+		cout << "\n¬ведите число элементов массива: ";
+		cin >> massive_size;
+		massive = new double[massive_size];
+		for (i = 0; i < massive_size; i++) massive[i] = rand() / 1500 - 10;
+		for (i = 0; i < massive_size; i++) {
+			cout << massive[i] << "\t";
+		}
+
+		cout << "\n\n";
+		for (int number_position = 0; number_position < massive_size - 2; number_position++)
+		{
+			if (massive[number_position + 2] < massive[number_position] - massive[number_position + 1]) { cout << massive[number_position + 2] << "\t"; }
+		}
+		delete[]massive;
+		break; }
 }
