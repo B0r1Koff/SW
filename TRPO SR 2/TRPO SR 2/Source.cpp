@@ -120,6 +120,40 @@ int main()
 		for (col = 0; col < n; col++) { delete[]matrix[col]; }
 		delete[]matrix;
 		break; }
+	case 5:
+	{
+		int** a, * b;
+		int dots_number, row, col;
+		cout << "\nЗадайте число точек: ";
+		cin >> dots_number;
+		cout << "\n";
+		a = new int* [dots_number];
+		for (row = 0; row < dots_number; row++)
+			a[row] = new int[2];
+		b = new int[2];
+		for (row = 0; row < 2; row++)
+			for (col = 0; col < dots_number; col++)  a[row][col] = rand() / 1500 - 10;
+		for (row = 0; row < 2; row++) {
+			for (col = 0; col < dots_number; col++) {
+				cout << a[row][col] << "\t";
+			}
+			cout << "\n\n";
+		}
+		int s = 0;
+		for (int c = 0; c < col; c++)
+		{
+			for (int d = 0; d < col; d++)
+			{
+				if (((a[0][c] - a[0][d]) * (a[0][c] - a[0][d])) + ((a[1][c] - a[1][d]) * (a[1][c] - a[1][d])) > s)
+				{
+					s = ((a[0][c] - a[0][d]) * (a[0][c] - a[0][d])) + ((a[1][c] - a[1][d]) * (a[1][c] - a[1][d]));
+				}
+			}
+		}
+		cout << "Наибольшее расстояние между точками равно ";
+		cout << pow(s, 1. / 2) << "\n";
+		break; }
+	}
 
 	}
-}
+
