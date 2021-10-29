@@ -77,4 +77,49 @@ int main()
 		}
 		cout << sum + 1;
 		break; }
+	case 4:
+	{
+		int n, row, col;
+		double** matrix, * matrix_col;
+		cout << "Введите n для задания размеров матрицы (n x n) : ";
+		cin >> n;
+		cout << "\nИсходная матрица: \n";
+		matrix = new double* [n];
+		for (row = 0; row < n; row++)
+			matrix[row] = new double[n];
+		matrix_col = new double[n];
+		for (row = 0; row < n; row++)
+			for (col = 0; col < n; col++) matrix[row][col] = rand() / 1500 - 10; cout << "\n";
+		for (row = 0; row < n; row++) {
+			for (col = 0; col < n; col++) {
+				cout << matrix[row][col] << "\t";
+			}
+			cout << "\n\n";
+		}
+		for (row = 1; row < n; row++)
+			for (col = 0; col < row; col++)
+			{
+				swap(matrix[row][col], matrix[col][row]);
+			}
+		cout << "\nТранспонированная матрица по главной диагонали: \n\n";
+		for (row = 0; row < n; row++) {
+			for (col = 0; col < n; col++) {
+				cout << matrix[row][col] << "\t";
+			}
+			cout << "\n\n";
+		}
+		cout << "\nТранспонтрованная матрица по побочной диагонали: \n\n";
+		for (row = 0; row < n; row++)
+		{
+			for (col = 0; col < n; col++)
+			{
+				cout << matrix[n - 1 - row][n - 1 - col] << "\t";
+			}
+			cout << "\n\n";
+		}
+		for (col = 0; col < n; col++) { delete[]matrix[col]; }
+		delete[]matrix;
+		break; }
+
+	}
 }
