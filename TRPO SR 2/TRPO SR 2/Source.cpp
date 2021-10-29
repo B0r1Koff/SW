@@ -49,4 +49,32 @@ int main()
 		}
 		delete[]massive;
 		break; }
+
+	case 3:
+	{
+
+		double* massive;
+		int i, massive_size;
+		cout << "\n¬ведите число элементов массива: ";
+		cin >> massive_size;
+		massive = new double[massive_size];
+		for (i = 0; i < massive_size; i++) cin >> massive[i];
+		for (i = 0; i < massive_size; i++) {
+			cout << massive[i] << "\t";
+		}
+
+
+		cout << "\n\n";
+		int counter = 0, sum = 1;
+		for (int number_position = 0; number_position < massive_size - 1; number_position++)
+		{
+			if (massive[number_position] == massive[number_position + 1]) { counter++; }
+			else
+			{
+				if (max(counter, sum) <= counter) sum = max(counter, sum);
+				counter = 0;
+			}
+		}
+		cout << sum + 1;
+		break; }
 }
