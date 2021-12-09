@@ -1,0 +1,6 @@
+Voitovich 114302 9 5
+Shved 114302 9.2 13
+Shkor 114302 8.9 29
+Petrachkov 114302 8.8 11
+Borikov 114302 7.1 3
+Mavlonov 114302 3.5 32
